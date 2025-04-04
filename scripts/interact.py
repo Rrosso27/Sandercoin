@@ -1,16 +1,29 @@
+import json
+import os
+from dotenv import load_dotenv
 from web3 import Web3
-from config.settings import INFURA_URL, OWNER_ADDRESS
 
-# Dirección del contrato desplegado (actualízala después del despliegue)
-CONTRACT_ADDRESS = "0xTuContratoDesplegado"
+# Cargar variables de entorno
+load_dotenv()
 
-# ABI del contrato (cópialo del deploy.py)
-ABI = [...]  # Pegue el ABI generado aquí
+INFURA_URL = os.getenv("INFURA_URL")
+OWNER_ADDRESS = os.getenv("OWNER_ADDRESS")
 
-# Conectar a Ethereum
+# Conexión con Infura
 w3 = Web3(Web3.HTTPProvider(INFURA_URL))
+
+# Cargar el ABI
+ABI_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "artifacts", "contracts", "Sandercoin.sol", "Sandercoin.json"))
+with open(ABI_PATH, "r") as file:
+    contract_json = json.load(file)
+    ABI = contract_json["abi"]
+
+# Dirección del contrato desplegado (asegúrate de poner la correcta)
+CONTRACT_ADDRESS = "0xTU_CONTRATO_EN_SEPOLIA"
+
+# Conectarse al contrato
 contract = w3.eth.contract(address=CONTRACT_ADDRESS, abi=ABI)
 
-# Consultar balance del dueño
-balance = contract.functions.balanceOf(OWNER_ADDRESS).call()
-print(f"Balance: {balance} MTK")
+# Llamar una función de ejemplo (reemplaza según tu contrato)
+total_supply = contract.functions.totalSupply().call()
+print(f"Suministro total: {total_supply}")

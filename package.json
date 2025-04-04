@@ -1,0 +1,30 @@
+{
+  "name": "hardhat-project",
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.2.0"
+  },
+  "version": "1.0.0",
+  "description": "~~~bash  \r  my-token-project/\r │── contracts/                   # Carpeta para contratos Solidity\r │   ├── MyToken.sol              # Código del contrato ERC-20\r │── scripts/                     # Scripts Python para interactuar con el contrato\r │   ├── deploy.py                # Script para desplegar el contrato\r │   ├── interact.py              # Script para interactuar con el contrato\r │── config/                      # Configuración del proyecto\r │   ├── settings.py              # API Keys y configuración de red \r     ├── __init__.py              #El archivo __init__.py sirve para que Python reconozca la carpeta config/ como un módulo\r │── requirements.txt             # Dependencias del proyecto\r │── README.md                    # Explicación del proyecto\r │── .env                         # Variables de entorno (clave privada, Infura API)\r ~~~",
+  "main": "hardhat.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.19"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rrosso27/Sandercoin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rrosso27/Sandercoin/issues"
+  },
+  "homepage": "https://github.com/Rrosso27/Sandercoin#readme"
+}

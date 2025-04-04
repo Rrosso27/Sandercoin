@@ -1,9 +1,0 @@
-/* curl --url https://polygon-mainnet.infura.io/v3/5ae66318e3664f4e8b8a3ae9a9e00e46 \
-//   -X POST */
-/* -H */ "Content-Type: application/json" /*\*/
- /* -d ' */ {
-    "jsonrpc": "2.0",
-    "method": "eth_blockNumber",
-    "params": [],
-    "id": 1
-}'
