@@ -18,12 +18,15 @@ with open(ABI_PATH, "r") as file:
     contract_json = json.load(file)
     ABI = contract_json["abi"]
 
-# Dirección del contrato desplegado (asegúrate de poner la correcta)
-CONTRACT_ADDRESS = "0xTU_CONTRATO_EN_SEPOLIA"
+# Leer dirección del contrato desde el archivo
+with open("scripts/contract_address.txt", "r") as file:
+    CONTRACT_ADDRESS = file.read().strip()
 
 # Conectarse al contrato
 contract = w3.eth.contract(address=CONTRACT_ADDRESS, abi=ABI)
 
-# Llamar una función de ejemplo (reemplaza según tu contrato)
+print("Conectado a Infura:", w3.is_connected())
+
+# Llamar función de ejemplo
 total_supply = contract.functions.totalSupply().call()
 print(f"Suministro total: {total_supply}")
