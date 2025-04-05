@@ -4,6 +4,8 @@
  
 ~~~bash  
  my-token-project/
+│── artifacts/                   # Contratos generados 
+│── ignition/                    #Almacena la configuración de los contratos inteligentes
 │── contracts/                   # Carpeta para contratos Solidity
 │   ├── MyToken.sol              # Código del contrato ERC-20
 │── scripts/                     # Scripts Python para interactuar con el contrato
